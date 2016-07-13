@@ -1,0 +1,14 @@
+setrand(1);
+Alea(n,m)=
+{ my(Q);
+  Q = matrix(n,n,i,j, random(m)-m\2);
+  return((Q+Q~) \ 2);
+}
+\r Qfn.gp
+\r qf13.gp
+\r finalqf13.gp
+
+a = Alea(13,10);
+b = Alea(13,10);
+
+Qfn(a,b)
