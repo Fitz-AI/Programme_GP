@@ -57,8 +57,8 @@ Final(A,B,z,r) =
 
   AA = A[2..n, 2..n];
   zz = z[2..n];
-  y = bestappr(zz, 10^r);
+  y = bestappr(zz, 2^r);
   print("r = ", r);
-  y = concat(-(y*AA*y~)/(2*y[2]), y);
+  y = concat(-(y*AA*y~)/(2*y[1]), y);
   return (y);
 }
