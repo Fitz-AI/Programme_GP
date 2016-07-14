@@ -59,7 +59,7 @@ return([P,P*A*P~]);
 }
 
 {
-Redqf(Q)=
+Redqf2(Q)=
 local(P,QQ,PP,tmp,g);
 tmp=BaseWitt2(Q);
 if(type(tmp)=="t_INT",return(1));
@@ -87,7 +87,7 @@ i=1;t=-1;
 P=matid(n);
 while(t<u,        
           B=vecextract(A,Str(i".."n),Str(i".."n));
-          tmp2=Redqf(B);
+          tmp2=Redqf2(B);
           if(type(tmp2)=="t_INT",break);
           tmp2=tmp2[1];
           C=matid(n);
@@ -116,7 +116,7 @@ A1=R*A*R~;
 B1=R*B*R~;
 z1=PosNeg(A1,B1,1);
 z2=z1*R;
-P=BaseWitt(A)2[1];
+P=BaseWitt2(A)[1];
 tmp=P*A*P~;
 P[2,]=P[2,]/tmp[1,2];
 P2=Mordell2(P*A*P~);
