@@ -1,6 +1,7 @@
-/*  Les prochains programmes permettent simplement de faire des changements de variables pour décomposer
- une forme quadratique en plans hyperboliques. Il est possible de trouver plus de précision dans 
-mon article Effective Hasse principle for the intersection of two quadrics. */
+/*  Les prochains programmes permettent simplement de faire des changements
+ *  de variables pour décomposer une forme quadratique en plans
+ *  hyperboliques. Pour plus de précision, voir mon article "Effective Hasse
+ *  principle for the intersection of two quadrics". */
 
 completebasis(v,redflag=0) =
 { my(U,n,re);
@@ -19,7 +20,6 @@ Mordell2(A)=
   return(P);
 }
 
-
 Mordell3(A)=
 { my(n = #A, P = matid(n), S);
 
@@ -28,8 +28,7 @@ Mordell3(A)=
   S = matid(n);
   S[2,] = 2*S[2,]-A2[2,2]*S[1,];
   S[1,1] = 1/2;
-  P = S*P;
-return(P);
+  return(S*P);
 }
 
 Mordell6(A)=
@@ -38,12 +37,10 @@ Mordell6(A)=
   P[2,3] = -A[2,1];
   for(i = 4, n, P[i,3] = -A[i,1]);
   return(P);
-}  
-
+}
 
 BaseWitt(A)=
-{ 
-my(n = #A, P=matid(n), X, tmp);
+{ my(n = #A, P=matid(n), X, tmp);
 
   X=qfsolve(A);
   if(type(X)=="t_MAT", X=X[,1]);
@@ -53,13 +50,12 @@ my(n = #A, P=matid(n), X, tmp);
   return(P);
 }
 
-
 Redqf(A)=
 { my(P, A2, P2, g);
 
   P = BaseWitt(A);
   if (type(P) == "t_INT", return(1));
-  A2 = P*A*P~; 
+  A2 = P*A*P~;
   g = A2[1,2];
   A2[1,] /= g;
   A2[,1] /= g;
@@ -68,45 +64,40 @@ Redqf(A)=
   A2 = P2*A2*P2~ ;
   P = P2*P;
   P2 = Mordell3(A2);
-  P=P2*P;
-  return(P);
-}  
+  return(P2 * P);
+}
 
- 
 Hyperbolique(A)=
-
-{ my( n = #A, r, s, u, i=1, t=-1, P=matid(n));
+{ my( n = #A, r, s, t, u, i = 1, P = matid(n));
 
   [r,s] = qfsign(A);
   u= min(r,s);
-  while(t<u,
-	    my(A2,tmp,C=matid(n));
-	    A2 = A[i..n,i..n];
-            tmp = Redqf(A2);
-            if(type(tmp) == "t_INT", break);
-            for(j = i, n,
-		  for(k = i, n, C[j,k] = tmp[j-i+1,k-i+1])
-		);
-            P = C*P; 
-            A = C*A*C~;
-            i += 2;
-  	    t += 1;
+  for(t = -1, u-1,
+    my(tmp, C=matid(n));
+    tmp = Redqf( A[i..n,i..n] );
+    if(type(tmp) == "t_INT", break);
+    for(j = i, n,
+      for(k = i, n, C[j,k] = tmp[j-i+1,k-i+1])
     );
+    P = C*P;
+    A = C*A*C~;
+    i += 2;
+  );
   return(P);
 }
-
 
 Permute(A)=
 { my(n = #A, P=matrix(n,n), j, k=1);
 
   P[1,1]=1;
-  for ( i = 2, n, 
-               if ( i % 2 == 0,
-		               P[i,n-j] = 1 ;
-		               j = j+1 ,
-                               P[i,1+k] = 1 ;
-		               k = k+1
-		  );
-      );
-  return(P~);
-}  
+  for (i = 2, n,
+    if (i % 2 == 0,
+      P[n-j,i] = 1;
+      j++
+    ,
+      P[1+k,i] = 1;
+      k++
+    );
+  );
+  return(P);
+}

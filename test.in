@@ -4,11 +4,16 @@ Alea(n,m)=
   Q = matrix(n,n,i,j, random(m)-m\2);
   return((Q+Q~) \ 2);
 }
-\r Qfn.gp
+p = default(path);
+default(path, Str(p, ":./libre"));
+
+\r libre/Qfmodife.gp
+\r programme/Qfn.gp
+\r programme/groupe_orthogonal.gp
+\r programme/Changements_de_bases.gp
 \r qf13.gp
-\r finalqf13.gp
 
 a = Alea(13,10);
 b = Alea(13,10);
 
-Qfn(a,b)
+Qfn(a,b, 5)
