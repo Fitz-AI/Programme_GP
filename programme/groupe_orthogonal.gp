@@ -24,7 +24,7 @@ isotrope(A,r)=
               if(A[i,i] != 0, r2=i-1;break)
    );
   m = 2*r2;
-  J=matrix(r2,r2);
+  J = matrix(r2,r2);
   for (i = 1, r2,
                 for(j = 1, r2,
 		            if (i+j == r2+1, J[i,j] = 1)
@@ -38,14 +38,14 @@ isotrope(A,r)=
 		         )
       );
   E = matrix(r2, r2, i, j, random([-r,r]));
-  E=E-E~;
-  T=-J*U~*A2;
+  E = E-E~;
+  T = -J*U~*A2;
   for (i = n-r2+1, n ,
                       for (j = r2+1, n-r2,
 		                          P[i,j] = T[i-(n-r2),j-r2]
 			  )
       );
-  C=(-1/2)*J*(U~*A2*U)+J*E;
+  C = (-1/2)*J*(U~*A2*U)+J*E;
   for (i = n-r2+1, n,
                    for (j = 1 ,r2, P[i,j]=C[i-(n-r2),j]
 		       )
@@ -62,7 +62,7 @@ isotrope2(A,r)=
               if(A[i,i] != 0, r2=i-1;break)
    );
   m = 2*r2;
-  J=matrix(r2,r2);
+  J = matrix(r2,r2);
   for (i = 1, r2,
                 for(j = 1, r2,
 		            if (i+j == r2+1, J[i,j] = 1)
@@ -90,19 +90,19 @@ isotrope2(A,r)=
 		                         P[i,j]=M0[i-r2,j-r2];
 			 )
       );
-  U=matrix(n-m, r2, i, j, random([-r,r]));
+  U = matrix(n-m, r2, i, j, random([-r,r]));
   for (i = r2+1, n-r2,
                      for (j = 1, r2, P[i,j]=U[i-r2,j])
       );
-  E=matrix(r2, r2, i, j, random([-r,r]));
-  E=E-E~;
-  T=-J~*((F~)^-1)*U~*A2*M0;
+  E = matrix(r2, r2, i, j, random([-r,r]));
+  E = E-E~;
+  T = -J~*((F~)^-1)*U~*A2*M0;
   for (i = n-r2+1, n,
                     for (j = r2+1, n-r2,
 		                       P[i,j]=T[i-(n-r2),j-r2]
 		        )
       );
-  C=(-1/2)*J*((F~)^-1)*(U~*A2*U)+J*((F~)^-1)*E;
+  C = (-1/2)*J*((F~)^-1)*(U~*A2*U)+J*((F~)^-1)*E;
   for (i = n-r2+1, n,
                      for (j = 1, r2,
 		                    P[i,j] = C[i-(n-r2),j]

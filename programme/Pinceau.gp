@@ -31,15 +31,16 @@ WittPinceau(A,B,r)=
   m = #s;
   s1 = max( abs(floor(s[1])) , abs(ceil(s[m])));
   while ( 1, 
-             my(a, b, A2, P);
+             my(a, b, A2, P,E);
 	     printf(".");
              a = random([-2^r,2^r]);
 	     b = random([-2^r,2^r]);
            \\  if ( a == 0, a += 1 );
            \\  b = random( [-abs(a)/s1, abs(a)/s1]); \\ On calcule a et b tels que abs(a/b) > abs(s1)
              A2 = a*A + b*B;
-             P = Hyperbolique(A2);   \\ On décompose A2 en plans hyperbolique
-             A2 = P*A2*P~;          
+             E = alarm(3,P = Hyperbolique(A2)); 
+             if ( type(E) == "t_ERROR", next); 
+             A2 = P*A2*P~;   \\ On décompose A2 en plans hyperbolique        
              if ( A2[n-2,n-2] == 0 , return([a,b]) )
         );
 }
