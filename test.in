@@ -10,6 +10,7 @@ default(parisize, "100M");
 
 \r libre/Qfmodife.gp
 \r programme/Qfn.gp
+\r programme/Pinceau.gp
 \r programme/groupe_orthogonal.gp
 \r programme/Changements_de_bases.gp
 \r qf13.gp
@@ -25,3 +26,12 @@ a = Alea(13,10^5);
 b = Alea(13,10^5);
 
 Qfn(a,b, 5)
+
+{
+for(i=1,50,
+  print(i,": ");
+  a = Alea(13,10^3);
+  b = Alea(13,10^3);
+  Qfn(a,b, 5)
+)
+}
