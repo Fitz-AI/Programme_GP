@@ -21,7 +21,7 @@ dichoqfsign(A,B)=
        );
   u = numerator(t);
   v= denominator(t);
-  return(m);
+  return([u,v]);
 }
 
 WittPinceau(A,B,r)=
