@@ -271,7 +271,7 @@ DEBUG_minp=0;
 		return([Qf,G]);
 	
 }
-
+ 
 \\minimisation en 2 lorsque le noyau est de dimension 1 ie : reduction de la partie paire
 \\on suppose que valuation(det Q,2)>=2
 {minim_en_2(Q)=

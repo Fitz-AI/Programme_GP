@@ -1,4 +1,6 @@
-\\ Ces algorithmes permettent de calculer un vecteur rationnel x tel que xAx~=0 et xBx~<0
+/* Ces algorithmes permettent de calculer un vecteur rationnel x tel que
+ * xAx~=0 et xBx~<0 */
+
 DoubleWitt(A,B)=
 { my(n = #A,z,P,B2,Q);
 
