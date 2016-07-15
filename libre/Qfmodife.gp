@@ -94,7 +94,6 @@ DEBUGLEVEL_myqfsolve=0;
         \\choix du vecteur
         Y=vector(n,i,random(bor)-bor>>1)~;
         H=Y~*Qt*Y;
-        print1(count," ");
         if(DEBUGLEVEL_myqfsolve>0,
             print("Essai de completion:",count);
             print("Y=",Y);
@@ -132,6 +131,7 @@ DEBUGLEVEL_myqfsolve=0;
             );\\fin if "ispseudoprime"
         );\\fin du if prim
     );\\fin Boucle principale (while)
+    print("count = ", count);
     
     \\On a un "bon" vecteur Y, donc on complète la matrice
     for(i=1,n,

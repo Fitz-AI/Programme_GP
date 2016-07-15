@@ -45,7 +45,7 @@ Qfn(A,B,r)=
     );
     cpt++;
   );    
-  print("compteur ", cpt );
+  if (mm < 5, print("compteur = ", cpt));
   if (type(X) == "t_MAT", X = X[,1]);
   return(X~ * P[1..mm,]);
 }
