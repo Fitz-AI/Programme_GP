@@ -6,6 +6,7 @@ Alea(n,m)=
 }
 p = default(path);
 default(path, Str(p, ":./libre"));
+default(parisize, "100M");
 
 \r libre/Qfmodife.gp
 \r programme/Qfn.gp
@@ -13,7 +14,14 @@ default(path, Str(p, ":./libre"));
 \r programme/Changements_de_bases.gp
 \r qf13.gp
 
+default(timer,1)
+
 a = Alea(13,10);
 b = Alea(13,10);
+
+Qfn(a,b, 5)
+
+a = Alea(13,10^5);
+b = Alea(13,10^5);
 
 Qfn(a,b, 5)

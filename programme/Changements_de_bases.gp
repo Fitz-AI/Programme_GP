@@ -39,6 +39,7 @@ Mordell6(A)=
   return(P);
 }
 
+
 BaseWitt(A)=
 { my(n = #A, P=matid(n), X, tmp);
 
@@ -48,6 +49,35 @@ BaseWitt(A)=
   P=completebasis(X)~;
   tmp=P[1,];P[1,]=P[n,];P[n,]=tmp;
   return(P);
+}
+
+vecteur(x)= my(Z = qflll(Mat(x))); return(Z[,1]~);
+BaseWitt(A)=
+{
+  my(n = #A, P = matid(n), u, X, t, B);
+  X = qfsolve(A);
+  if(type(X)=="t_INT",return(1));
+  if(type(X)=="t_MAT", X = X[,1]);
+  X /= content(X);
+  P = (mathnf(X~,4)[2])^-1;
+  t=P[1,];P[1,]=P[n,];P[n,]=t;
+  \\ P in Gl_n(Z), whose first line is X
+  B = P*A*P~;
+  my (u);
+  if (0,
+    u = mathnf(B[1,][2..n], 4)[2][,n-1]~;
+    PP= matconcat([1, 0; 0, (mathnf(u,4)[2])^-1]);
+    t = PP[2,]; PP[2,] = PP[n,]; PP[n,] = t;
+  , /* old code */
+    M = matrix(2,n);
+    M[1,1] = 1;
+    M[2,] = vecteur(B[1,]);
+    PP=(mathnf(M,4)[2])^-1;
+
+    t = PP[1,]; PP[1,] = PP[n-1,]; PP[n-1,] = t;
+    t = PP[2,]; PP[2,] = PP[n,]; PP[n,] = t;
+  );
+  return(PP*P);
 }
 
 Redqf(A)=

@@ -35,7 +35,7 @@ Qfn(A,B,r)=
     if (mm > 5,  mm = 5; C = C[1..5,1..5]);
     if (#C == 5,
       C /= content(C);
-      if (type(X = myqfsolve(C)) != "t_INT", break);
+      if (type(X = myqfsolve(C,,1)) != "t_INT", break);
     ,
       my(R);
       R = factor(matdet(C), 10^6)[,1];
