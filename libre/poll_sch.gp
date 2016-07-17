@@ -5,10 +5,6 @@
 \\                               \\ 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-print("");
-print("===== poll_sch.gp =====");
-print("- poll_sch(k,m,n)");
-print("");
 
 global(prof);
 prof=0;

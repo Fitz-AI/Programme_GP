@@ -2,17 +2,15 @@
  * xAx~=0 et xBx~<0 */
 
 DoubleWitt(A,B)=
-{ my(n = #A,z,P,B2,Q);
+{ my(n = #A,z,P = matid(n),B2,Q = matid(n));
 
   z = finalsol(A,B);
-  P = matid(n);
   P[1,] = z;
   P[2,] /= (P*A*P~)[1,2];
   P = Mordell2(P*A*P~) * P;
   B2 = P*B*P~;
-  Q = matid(n);
-  Q[3,] /= B3[1,3];
-  Q = Mordell6(Q*BB*Q~) * Q;
+  Q[3,] /= B2[1,3];
+  Q = Mordell6(Q*B2*Q~) * Q;
   return(Q * P);
 }
 
@@ -32,7 +30,7 @@ PosNeg(A,B,c)=
     if (e <= 0, break);
     y[2] = 2*y[2];
   );
-  z = concat(-(y*AA*y~)/(2*y[1]), y);
+  z = concat(-(y*A2*y~)/(2*y[1]), y);
   return(z);
 }
 

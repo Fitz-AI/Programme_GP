@@ -5,7 +5,7 @@ dichoqfsign(A,B)=
   if( qfsign(A+B)[1] >= floor(n/2), return(1));
   \\ test de -1
   if( qfsign(-A+B)[1] >= floor(n/2), return(-1));
-  pol = matdet(A*x+B);
+  pol = matdet(A*'x+B);
   s = polrootsreal(pol);
   m = #s;
   s1 = max( abs(floor(s[1])) , abs(ceil(s[m]))) + 1;

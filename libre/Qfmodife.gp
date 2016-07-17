@@ -17,7 +17,7 @@
 \\ /!\ smooth_things.gp (??)
 \\ /!\
 \\ /!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\
-print("");
+/* print("");
 print("===== mynewqfsolve.gp =====");
 print("- completemat(Q,pow,coeff,prim=0,newsgn=1,detQ=matdet(Q))");
 print("- myQfsolve(Qf,pow=1,prim=0)");
@@ -25,7 +25,7 @@ print("");
 
 
 print("Chargement de smooth_things.gp");
-\r smooth_things.gp
+ \r smooth_things.gp
 print("Chargement de qfsolve.gp (Simon)");
 \r qfsolve.gp
 print("Chargement de poll_sch.gp");
@@ -34,6 +34,8 @@ print("Chargement de gramschmidt.gp");
 \r gramschmidt.gp
 print("Chargement de minim_p.gp");
 \r minim_p.gp
+
+*/
 
 DEBUGLEVEL_myqfsolve=0;
 

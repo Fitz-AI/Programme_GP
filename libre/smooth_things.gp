@@ -15,15 +15,6 @@
 \\  VERSION DU 31 / 01 / 2011    \\
 \\                               \\ 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-print("");
-print("===== smooth_things.gp =====");
-print("- nf");
-print("- Bf");
-print("- is_smooth(N)");
-print("- is_almost_smooth(N)");
-print("- smooth_part(N)");
-print("- non_smooth_part(N)");
-print("");
 
 \\Fichier contenant des programmes en rapport à la friabilité
 
@@ -36,8 +27,7 @@ global(nf,Bf,Pf);
 nf=1;
 Bf=primes(nf);
 Pf=prod(i=1,nf,Bf[i]);
-print("Voici la base des facteurs premiers : ")
-print(Bf);
+
 
 \\maintenant on ecrit plusieurs procedures utiles
 \\rapport a la friabilite

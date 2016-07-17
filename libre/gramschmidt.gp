@@ -12,11 +12,7 @@
 \\  VERSION DU 31 / 01 / 2011    \\
 \\                               \\ 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-print("");
-print("===== gramschmidt.gp =====");
-print("- gram_schmidt(Q,p)");
-print("- delta_diag(Qdiag,i)");
-print("");
+
 
 \\procédé de gram-schmidt
 {gram_schmidt(Q,p)=
