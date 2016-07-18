@@ -23,7 +23,7 @@ SOn(A,r)=
   return(S);
 }
 
-\\ Calcule un élément du radical unipotent du groupe orthogonal de A.
+\\ Calcule un �l�ment du radical unipotent du groupe orthogonal de A.
 \\ A symétrique, équilibrée (|p-m| <= 1, [p,m] = qfsign(A))
 isotrope(A, r)=
 { my(n = #A, r2, P=matid(n), m, J, A2, U, E, T, C);
