@@ -1,5 +1,7 @@
 # Programme_GP
 
+Le code de ce répertoire correspond au code utilisé dans ma thèse "Résolution de systèmes de deux équations quadratiques". Pour toutes questions sur la partie théorique ou sur le code n'hésitez pas à me contacter par mail.
+
 Charger le programme charger.gp dans Pari/GP pour charger tous les programmes. Dans le dossier programme ce sont mes programmes, dans le dossier libre ce sont certains programmes de Pierre Castel et de Denis Simon.
 
 La fonction Alea(n,m) permet de générer une matrice symétrique aléatoire de taille n avec des coefficients entre -m et m.
