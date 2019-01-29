@@ -1,6 +1,8 @@
 # Programme_GP
 
-Le code de ce répertoire correspond au code utilisé dans ma thèse "Résolution de systèmes de deux équations quadratiques". Pour toutes questions sur la partie théorique ou sur le code n'hésitez pas à me contacter par mail.
+Le code de ce répertoire correspond au code utilisé dans ma thèse "Résolution de systèmes de deux équations quadratiques". Pour toutes questions sur la partie théorique ou sur le code n'hésitez pas à me contacter par mail. 
+
+Le code basé sur la partie probabiliste n'est pas présent mais si besoin je peux l'envoyer.
 
 Charger le programme charger.gp dans Pari/GP pour charger tous les programmes. Dans le dossier programme ce sont mes programmes, dans le dossier libre ce sont certains programmes de Pierre Castel et de Denis Simon.
 
