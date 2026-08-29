@@ -16,29 +16,6 @@ pencil (draw no. 179 of campaign E03).
   these relative paths, so this directory must stay a sibling of `libre/`
   and `programme/` at the repository root.
 
-## Quick check
-
-```
-gp -q make_all_checks.gp
-```
-
-runs all six scripts below as subprocesses and reports PASS/FAIL for each,
-by pattern-matching the success markers each script already prints (see the
-comments at the top of `make_all_checks.gp`). It does not recompute
-anything itself and does not modify any of the underlying scripts; the
-proof is in the scripts, not in the harness. Takes about 7-8 seconds in
-total and should print:
-
-```
-  check_singularite.gp             PASS
-  preuve_v2.gp                     PASS
-  verif_12classes.gp               PASS
-  certificat_decomposition.gp      PASS
-  audit_complet.gp                 PASS  [36/36 accords]
-  arbitre_mod64.gp                 PASS
-
-=== 6/6 scripts PASS ===
-```
 
 ## The six scripts and what each one establishes
 
